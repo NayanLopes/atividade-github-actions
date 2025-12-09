@@ -1,0 +1,22 @@
+name: Workflow de Demonstração
+
+on: [push]
+
+jobs:
+  demonstracao:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Executar script de teste
+        run: |
+          echo "Pipeline executada com sucesso!"
+          ls -la
+          node -v
